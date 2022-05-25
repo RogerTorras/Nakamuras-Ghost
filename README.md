@@ -1,5 +1,7 @@
 # Nakamuras-Ghost
 
+An intelligent robot that knows how to play chess.
+
 # Table of contents
 - [Nakamuras-Ghost](#nakamuras-ghost)
 - [Table of contents](#table-of-contents)
@@ -16,7 +18,11 @@
 
 # What is this?
 
+The project is an academic project in robotics.The robot can scan the user's motion, then calculate the next step and do it on its own.
+
 # Requirements
+
+
 
 # Documentation
 
