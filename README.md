@@ -22,8 +22,8 @@ The project is an academic project in robotics.The robot can scan the user's mot
 
 # Requirements
 
-[Google](https://www.google.com)
-..* [Google](https://www.google.com)
+*[Google](https://www.google.com)
+* [Google](https://www.google.com)
 
 # Documentation
 
