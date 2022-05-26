@@ -39,13 +39,13 @@ You will also find every component we used to build it.
 
 # How to use
 1. Clone this repo.
-'''
+```
 git clone https://github.com/RogerTorras/Nakamuras-Ghost.git
-'''
+```
 2. Install the required libraries.
-'''
+```
 pip install requeriments/requeriments.txt
-'''
+```
 3. Run main file
 # License
 
