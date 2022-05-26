@@ -8,10 +8,12 @@ An intelligent robot that knows how to play chess.
 - [What is this?](#what-is-this-)
 - [Requirements](#requirements)
 - [Hardware used](#hardware-used)
+- [Hardware scheme](#hardware-scheme)
 - [Documentation](#documentation)
 - [How to use](#how-to-use)
 - [License](#license)
 - [Use case](#use-case)
+- [Video example]([video-example)
 - [Contribution](#contribution)
 - [Citing](#citing)
 - [Authors](#authors)
@@ -63,6 +65,8 @@ pip install requeriments/requeriments.txt
 # Use case
 
 If this project is helpful to you or if you find improvements, we encourage you to open an issue.
+
+## Video example
 
 # Contribution
 
