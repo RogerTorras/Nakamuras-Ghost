@@ -66,9 +66,9 @@ If you use this code, we would appreciate if you cite our project.
 
 # Authors
 
-Sergio Bolaños
-Maksym Lakhmanets
-Ruben Martinez
+Sergio Bolaños<br />
+Maksym Lakhmanets<br />
+Ruben Martinez<br />
 Roger Torras
 
 # Bibliography
