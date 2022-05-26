@@ -22,8 +22,16 @@ The project is an academic project in robotics.The robot can scan the user's mot
 
 # Requirements
 
-*[Google](https://www.google.com)
-* [Google](https://www.google.com)
+* [Python 3.9.7](https://www.python.org/downloads/release/python-397/)
+* [time](https://docs.python.org/3/library/time.html)
+* [RPi.GPIO 0.7.1](https://pypi.org/project/RPi.GPIO/)
+* [numpy](https://numpy.org/)
+* [chess](https://pypi.org/project/chess/)
+* [picamera](https://picamera.readthedocs.io/en/release-1.13/)
+* [natsort 8.1.0](https://pypi.org/project/natsort/)
+* [hub 2.5.0](https://pypi.org/project/hub/)
+* [keras](https://keras.io/)
+
 
 # Documentation
 
