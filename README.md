@@ -35,7 +35,15 @@ The project is an academic project in robotics.The robot can scan the user's mot
 
 # Hardware used
 
+* Raspberry PI 3B
+* PI Camera
+* Electromagnet
+* Stepper motor x2
+* Controller ULN2003XX x2
+* Power supply
 
+## Hardware scheme
+![alt text](https://github.com/RogerTorras/Nakamuras-Ghost/blob/main/hwscheme.jpg?raw=true)
 # Documentation
 In this README you will find all the documentation you need to set up and run this project.
 You will also find every component we used to build it.
