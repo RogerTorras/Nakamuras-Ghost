@@ -7,6 +7,7 @@ An intelligent robot that knows how to play chess.
 - [Table of contents](#table-of-contents)
 - [What is this?](#what-is-this-)
 - [Requirements](#requirements)
+- [Hardware used](#hardware-used)
 - [Documentation](#documentation)
 - [How to use](#how-to-use)
 - [License](#license)
@@ -32,6 +33,8 @@ The project is an academic project in robotics.The robot can scan the user's mot
 * [hub 2.5.0](https://pypi.org/project/hub/)
 * [keras](https://keras.io/)
 
+# Hardware used
+
 
 # Documentation
 In this README you will find all the documentation you need to set up and run this project.
@@ -51,10 +54,21 @@ pip install requeriments/requeriments.txt
 
 # Use case
 
+If this project is helpful to you or if you find improvements, we encourage you to open an issue.
+
 # Contribution
+
+Any contribution is welcome!!
 
 # Citing
 
+If you use this code, we would appreciate if you cite our project.
+
 # Authors
+
+Sergio Bolaños
+Maksym Lakhmanets
+Ruben Martinez
+Roger Torras
 
 # Bibliography
