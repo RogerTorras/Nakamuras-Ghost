@@ -1,7 +1,6 @@
 # Nakamuras-Ghost
 
 An intelligent robot that knows how to play chess.
-![alt text](https://github.com/RogerTorras/Nakamuras-Ghost/blob/main/image.png?raw=true)
 
 # Table of contents
 - [Nakamuras-Ghost](#nakamuras-ghost)
