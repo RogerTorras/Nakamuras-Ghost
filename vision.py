@@ -4,23 +4,22 @@ import time
 import numpy as np
 import tensorflow_hub as hub
 
-from picamera import PiCamera
 from natsort import natsorted
-from keras.utils import load_img
+from keras.preprocessing.image import load_img
 from keras.models import load_model
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
 
 def initModels():
-    M = "./Redes Neuronales/m_mano.h5"
-    P = "./Redes Neuronales/p_mano.h5"
+    M = "./Redes Neuronales/Modelo Mano/m_mano.h5"
+    P = "./Redes Neuronales/Modelo Mano/p_mano.h5"
 
     modelo_T = load_model(M, custom_objects = {'KerasLayer':hub.KerasLayer})
     modelo_T.load_weights(P)
 
-    M = "./Redes Neuronales/m_colores.h5"
-    P = "./Redes Neuronales/p_colores.h5"
+    M = "./Redes Neuronales/Modelo Piezas/m_colores.h5"
+    P = "./Redes Neuronales/Modelo Piezas/p_colores.h5"
 
     modelo_P = load_model(M, custom_objects = {'KerasLayer':hub.KerasLayer})
     modelo_P.load_weights(P)
@@ -72,25 +71,25 @@ def deteccionTablero(modelo_T):
 
 
 def capturaImagen():            #Hacer el bucle para las fotos con la raspicam y obtener la media
-    with picamera.PiCamera() as camera:
-        camera.resolution = (2592, 1944)
-        camera.framerate = 15
-        time.sleep(5)
-        camera.capture('tablero.jpg')
+    cap = cv2.VideoCapture(0)
+
+    cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1952)
+    cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 1952)
+
+    _, img = cap.read()
+    
+    cv2.imwrite('./Data/tablero.jpg', img)
 
 
 def procesaImagen():            #Realizar el crop de la imagen tablero.jpg y de sus casillas
-    img = cv2.imread('tablero.jpg')
+    img = cv2.imread('./Data/tablero.jpg')
 
-    """
-    Obtener las coordenadas a partir del ginput
-    """
-
-    size_casilla = 0
+    size_casilla = 244
     cnt = 1
 
-    for i in range(0, 12, size_casilla):
-        for j in range(0, 12, size_casilla):
+    for i in range(0, 1951, size_casilla):
+        for j in range(0, 1951, size_casilla):
             casilla = img[j:j+size_casilla, i:i+size_casilla]
             path = './Data/Casillas/casilla_' + str(cnt) + '.jpg'
             cv2.imwrite(path, casilla)
+            cnt += 1

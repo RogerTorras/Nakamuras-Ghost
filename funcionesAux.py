@@ -1,8 +1,10 @@
 import numpy as np
 
 class Casilla:
-    def __init__(self, l, n):
+    def __init__(self, l, n, v, c):
         self.pos = l + str(n)
+        self.value = v
+        self.coord = c
 
 
 def initTaulers():
@@ -11,9 +13,18 @@ def initTaulers():
     tablero_aux = np.zeros((8, 8), dtype=Casilla)
 
     letras = ["a", "b", "c", "d", "e", "f", "g", "h"]
+
     for i, letra in zip(range(8), letras):
         for j in range(8):
-            tablero_aux[j][i] = Casilla(letra, 8 - j)
+            tablero_aux[j][i] = Casilla(letra, 8 - j, -1, [0, 0])
+
+    cnt = 1
+
+    for i in range(8):
+        for j in range(8):
+            tablero_aux[i][7-j].value = 64 - cnt
+            tablero_aux[i][j].coord = [i, j]
+            cnt += 1
 
     return tablero_aux, tablero_1, tablero_2
 
@@ -33,5 +44,8 @@ def traducirJugadaPlayer(resta, tablero_aux):
     return movimiento
 
 
-def traducirJugadaIA():
-    a = 0
+def traducirJugadaIA(mI, mF, t):
+    posInicio = [casilla.coord for c in t for casilla in c if casilla.value == mI]
+    posFinal =  [casilla.coord for c in t for casilla in c if casilla.value == mF]
+
+    return posInicio[0], posFinal[0]

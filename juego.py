@@ -4,7 +4,7 @@ import chess.engine
 
 def initJuego():
     board = chess.Board()
-    engine = chess.engine.SimpleEngine.popen_uci(r"Recursos/Stockfish.exe")
+    engine = chess.engine.SimpleEngine.popen_uci("Stockfish/src/stockfish")
     return board, engine
 
 
@@ -22,4 +22,7 @@ def makePlay(board, engine, jugada, player):
         print("Movimiento StockFish:" + str(result.move))
         board.push(result.move)
 
-        return str(result.move)
+        mI = result.move.from_square
+        mF = result.move.to_square
+
+        return mI, mF 
