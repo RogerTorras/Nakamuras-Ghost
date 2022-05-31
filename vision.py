@@ -1,12 +1,13 @@
 import os
+import cv2
 import time
 import numpy as np
 import tensorflow_hub as hub
 
 from picamera import PiCamera
 from natsort import natsorted
+from keras.utils import load_img
 from keras.models import load_model
-from keras.preprocessing import image
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
@@ -34,7 +35,7 @@ def aplicarModelo(modelo, data, tablero, M):
         data_ordenado = natsorted(os.listdir(data))
 
         for i, img in enumerate(data_ordenado):
-            img = image.load_img(os.path.join(data, img), target_size = (224, 224))
+            img = load_img(os.path.join(data, img), target_size = (224, 224))
             img = np.array(img).astype(float)/255
             batch_holder[i, :] = img
 
@@ -48,7 +49,7 @@ def aplicarModelo(modelo, data, tablero, M):
         return
 
     elif M == 'T':
-        img = image.load_img(data, target_size = (224, 224))
+        img = load_img(data, target_size = (224, 224))
         img = np.array(img).astype(float)/255
         prediccion = modelo(img.reshape(-1, 224, 224, 3))
 
@@ -74,10 +75,22 @@ def capturaImagen():            #Hacer el bucle para las fotos con la raspicam y
     with picamera.PiCamera() as camera:
         camera.resolution = (2592, 1944)
         camera.framerate = 15
-        time.sleep(2)
-        output = np.empty((240, 320, 3), dtype=float)
-        camera.capture(output, 'rgb')
+        time.sleep(5)
+        camera.capture('tablero.jpg')
 
 
 def procesaImagen():            #Realizar el crop de la imagen tablero.jpg y de sus casillas
-    a = 0
+    img = cv2.imread('tablero.jpg')
+
+    """
+    Obtener las coordenadas a partir del ginput
+    """
+
+    size_casilla = 0
+    cnt = 1
+
+    for i in range(0, 12, size_casilla):
+        for j in range(0, 12, size_casilla):
+            casilla = img[j:j+size_casilla, i:i+size_casilla]
+            path = './Data/Casillas/casilla_' + str(cnt) + '.jpg'
+            cv2.imwrite(path, casilla)
