@@ -68,6 +68,8 @@ If this project is helpful to you or if you find improvements, we encourage you 
 
 ## Video example
 
+https://drive.google.com/file/d/1t4IqKO8GlLwrg_mCsVGcUjYnZGq0WFzb/view?usp=drivesdk 
+
 # Contribution
 
 Any contribution is welcome!!
